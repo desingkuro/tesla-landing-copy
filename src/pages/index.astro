@@ -1,0 +1,21 @@
+---
+import Header from '../components/Header.astro';
+import SectionLanding from '../components/SectionLanding.astro';
+import ModelY from '../components/ModelY.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<Header/>
+	<main class="snap-y snap-mandatory overflow-auto w-full relative h-screen">
+		<div class="snap-center">
+			<SectionLanding/>
+		</div>
+		<div class="snap-center">
+			<ModelY/>
+		</div>
+		<div class="snap-center">
+			<SectionLanding/>
+		</div>
+	</main>
+</Layout>

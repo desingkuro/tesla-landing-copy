@@ -1,0 +1,45 @@
+<script defer>
+    const landingHeader = document.getElementById("landingHeader")// $ indica que es un elelemto del home
+    const listElement = document.querySelectorAll("#landingHeader li")
+    const menuBackdrop = document.querySelector("#backdrop")
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px", // en cuanto se vea el elemento
+        threshold: 0.9, // porcentaje de visibilidad
+    }
+
+    const observer = new IntersectionObserver((entry)=>{
+        
+        entry.forEach((element)=>{
+            const {isIntersecting} = element
+            if(isIntersecting){
+                const color = element.target.getAttribute("data-header-color")
+                console.log(color)
+                landingHeader.style.color = color
+            }
+        })
+    }, observerOptions)
+
+    const sections = document.querySelectorAll(".Landing-section")
+
+    sections.forEach((e)=>{observer.observe(e)})
+
+    listElement.forEach((item)=>{
+        item.addEventListener("mouseenter",()=>{
+            const {left, top, width, height} = item.getBoundingClientRect() // obtenemos las variables que creamos en los estilos
+            menuBackdrop.style.setProperty("--left", `${left}px`)
+            menuBackdrop.style.setProperty("--top", `${top}px`)
+            menuBackdrop.style.setProperty("--width", `${width}px`)
+            menuBackdrop.style.setProperty("--height", `${height}px`)
+            menuBackdrop.style.opacity = "1"
+            menuBackdrop.style.visibility = "visible"
+        })
+        item.addEventListener("mouseleave", () => {
+            menuBackdrop.style.opacity = "0"
+            menuBackdrop.style.visibility = "hidden"
+        })
+
+    })
+
+</script>
