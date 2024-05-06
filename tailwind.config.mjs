@@ -5,10 +5,17 @@ export default {
 		fontFamily:{
 			sans:['Gotham SSm A','sanas-serif']
 		},
-		extend: {},
+		extend: {
+			padding:{
+				'0.5':'0.05rem'
+			}
+		},
 		screens:{
-			'sm':'720px'
-		}
+			'xs':'0px',
+			'xl':'500',
+			'sm':'720px',
+			'basic':'1000px'
+		},
 	},
 	plugins: [],
 }
