@@ -5,11 +5,11 @@ import Logo from "./Logo.astro";
 
 <header 
     id="landingHeader"
-    class="px-8 py-3 flex items-center justify-between w-full fixed top-0 z-40"
+    class="sm:px-8 py-3 flex items-center justify-between w-full fixed top-0 z-40 basic:flex-row flex-col xs:px-2"
     >
     <Logo/>
     <nav class="">
-        <ul class="flex [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-current [&>li>a]:text-sm 
+        <ul class="flex [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-current xs:[&>li>a]:text-xs sm:[&>li>a]:text-sm xs:[&>li>a]:px-0.5 w-full gap-1
             [&>li>a]:font-medium [&>li>a]:transition-colors [&>li>a]:duration-300"
             >
             <li><a href="#">Model S</a></li>
