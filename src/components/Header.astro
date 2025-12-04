@@ -1,43 +1,55 @@
 ---
 import Logo from "./Logo.astro";
-
 ---
 
-<header 
+<header
     id="landingHeader"
-    class="sm:px-8 py-3 flex items-center justify-between w-full fixed top-0 z-40 basic:flex-row flex-col xs:px-2"
-    >
-    <Logo/>
-    <nav class="">
-        <ul class="flex [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-current xs:[&>li>a]:text-xs sm:[&>li>a]:text-sm xs:[&>li>a]:px-0.5 w-full gap-1
-            [&>li>a]:font-medium [&>li>a]:transition-colors [&>li>a]:duration-300"
-            >
+    class="px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between w-full fixed top-0 z-40 flex-wrap gap-2"
+>
+    <div class="flex-shrink-0">
+        <Logo />
+    </div>
+
+    <nav class="order-3 lg:order-2 w-full lg:w-auto">
+        <ul
+            class="flex flex-wrap justify-center items-center gap-1 sm:gap-2
+            [&>li>a]:px-2 [&>li>a]:py-2 [&>li>a]:text-current
+            [&>li>a]:text-xs sm:[&>li>a]:text-sm lg:[&>li>a]:text-base
+            [&>li>a]:font-medium [&>li>a]:transition-colors [&>li>a]:duration-300
+            [&>li>a]:whitespace-nowrap"
+        >
             <li><a href="#">Model S</a></li>
             <li><a href="#">Model 3</a></li>
-            <li><a href="#">Model x</a></li>
+            <li><a href="#">Model X</a></li>
             <li><a href="#">Model Y</a></li>
-            <li><a href="#">Powerwall</a></li>
-            <li><a href="#">Carga</a></li>
+            <li class="hidden sm:block"><a href="#">Powerwall</a></li>
+            <li class="hidden sm:block"><a href="#">Carga</a></li>
         </ul>
     </nav>
-    <nav class="flex basis-0 flex-grow justify-end"	>
-        <ul class="flex [&>li>a]:px-3 [&>li>a]:text-current 
-            [&>li>a]:py-2 [&>li>a]:text-sm [&>li>a]:font-medium [&>li>a]:transition-colors 
-            [&>li>a]:duration-300">
-            <li><a href="#">Soperte</a></li>
-            <li><a href="#">Tienda</a></li>
-            <li><a href="#">Cuenta</a></li>
+
+    <nav class="order-2 lg:order-3 flex-shrink-0">
+        <ul
+            class="flex items-center gap-1
+            [&>li>a]:px-2 sm:[&>li>a]:px-3 [&>li>a]:text-current
+            [&>li>a]:py-2 [&>li>a]:text-xs sm:[&>li>a]:text-sm
+            [&>li>a]:font-medium [&>li>a]:transition-colors
+            [&>li>a]:duration-300 [&>li>a]:whitespace-nowrap"
+        >
+            <li class="hidden md:block"><a href="#">Soporte</a></li>
+            <li class="hidden md:block"><a href="#">Tienda</a></li>
+            <li class="hidden sm:block"><a href="#">Cuenta</a></li>
             <li><a href="#">Menú</a></li>
         </ul>
     </nav>
 
-    <div id="backdrop" class="
-    absolute bg-black/10 backdrop-blur-lg rounded
+    <div
+        id="backdrop"
+        class="absolute bg-black/10 backdrop-blur-lg rounded
     translate-x-[var(--left)] translate-y-[var(--top)]
     left-0 top-0
     w-[var(--width)] h-[var(--height)]
     transition-all duration-300
-    ease-in-out opacity-0 -z-10
-    "></div>
+    ease-in-out opacity-0 -z-10"
+    >
+    </div>
 </header>
-
